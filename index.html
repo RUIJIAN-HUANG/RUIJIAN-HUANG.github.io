@@ -1,1 +1,143 @@
-welcome to my blog
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[黄睿健] | 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { line-height: 1.6; color: var(--dark-color); background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 40px auto; background: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); overflow: hidden; }
+        header { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 50px 40px 40px; text-align: center; }
+        .avatar { width: 140px; height: 140px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); object-fit: cover; margin-bottom: 20px; }
+        h1 { font-size: 2.8rem; margin-bottom: 8px; font-weight: 800; }
+        .tagline { font-size: 1.3rem; opacity: 0.9; margin-bottom: 25px; }
+        .contact-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 25px; }
+        .contact-bar a { color: white; background: rgba(255,255,255,0.15); padding: 10px 22px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .contact-bar a:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
+        main { padding: 50px 40px; }
+        section { margin-bottom: 45px; }
+        h2 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; display: flex; align-items: center; gap: 10px; }
+        .about-text { font-size: 1.1rem; color: var(--gray-color); line-height: 1.8; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+        .skill-tag { background: #e0f2fe; color: var(--primary-color); padding: 8px 18px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 15px; }
+        .project-card { border: 1px solid #e2e8f0; border-radius: 15px; padding: 25px; transition: all 0.3s; background: white; }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
+        .project-card h3 { color: var(--dark-color); margin-bottom: 10px; }
+        .project-card p { color: var(--gray-color); margin-bottom: 15px; font-size: 0.95rem; }
+        .project-link { color: var(--primary-color); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+        footer { text-align: center; padding: 30px; color: var(--gray-color); font-size: 0.95rem; border-top: 1px solid #e2e8f0; background: #f8fafc; }
+        @media (max-width: 768px) {
+            .container { margin: 20px auto; }
+            header, main { padding: 30px 25px; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- 头像：将以下src链接替换为您的头像图片URL -->
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="头像" class="avatar">
+            <h1>[您的名字]</h1>
+            <p class="tagline">[一句话介绍，例如：全栈开发者 | 技术爱好者]</p>
+            <div class="contact-bar">
+                <a href="mailto:您的邮箱@example.com"><i class="fas fa-envelope"></i> 邮箱</a>
+                <a href="https://github.com/您的用户名" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/您的用户名" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="/resume.pdf"><i class="fas fa-file-pdf"></i> 简历</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2><i class="fas fa-user"></i> 关于我</h2>
+                <p class="about-text">
+                    在这里写一段关于您的详细介绍。例如：我是一名充满热情的全栈开发者，擅长使用 JavaScript、Python 及相关框架构建高效、可扩展的Web应用。热爱学习新技术，解决复杂问题，并致力于创造优雅的代码和出色的用户体验。
+                </p>
+            </section>
+
+            <section id="skills">
+                <h2><i class="fas fa-code"></i> 技能栈</h2>
+                <div class="skills-container">
+                    <!-- 请修改或添加您的技能 -->
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Docker</span>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2><i class="fas fa-project-diagram"></i> 精选项目</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>智能待办清单应用</h3>
+                        <p>一个基于React和Node.js构建的全功能待办事项应用，支持实时同步、标签分类和团队协作。</p>
+                        <a href="https://github.com/您的用户名/项目1" class="project-link" target="_blank">查看代码 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <h3>天气信息仪表盘</h3>
+                        <p>使用Vue.js和第三方API开发的响应式天气仪表板，提供可视化天气数据和7天预报。</p>
+                        <a href="https://github.com/您的用户名/项目2" class="project-link" target="_blank">查看代码 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <h3>个人博客系统</h3>
+                        <p>使用Django开发的轻量级博客系统，包含完整的用户认证、文章管理和评论功能。</p>
+                        <a href="https://github.com/您的用户名/项目3" class="project-link" target="_blank">查看代码 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© <span id="currentYear"></span> [您的名字]. 本页面由 GitHub Pages 驱动。</p>
+            <p style="margin-top: 5px; font-size: 0.9rem;">
+                最后更新于：<span id="lastUpdate"></span> | 
+                访问量：<i class="fas fa-eye"></i> <span id="visitorCount">加载中...</span>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 自动更新年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // 显示最后更新时间（这里显示页面最后修改时间）
+        document.getElementById('lastUpdate').textContent = new Date(document.lastModified).toLocaleDateString('zh-CN');
+        // 简单的访问计数示例（如需真实计数需使用后端或第三方服务）
+        let count = localStorage.getItem('pageVisits') || 100;
+        count++;
+        localStorage.setItem('pageVisits', count);
+        document.getElementById('visitorCount').textContent = count;
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
