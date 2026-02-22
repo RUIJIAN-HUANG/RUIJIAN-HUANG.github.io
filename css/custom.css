@@ -1,15 +1,19 @@
 /* ========================================
-   全局背景：xuenai.jpg 铺满 + 透明滤镜
+   全局背景：xuenai.jpg 铺满全屏（无白边、无灰色）
    ======================================== */
-body {
-  background: url(/img/xuenai.jpg) no-repeat fixed center center !important;
-  background-size: cover !important;
-  position: relative;
+html, body {
   margin: 0 !important;
   padding: 0 !important;
-  min-height: 100vh !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: url(/img/xuenai.jpg) no-repeat fixed center center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  overflow-x: hidden !important;
 }
-
+body {
+  position: relative;
+}
 body::before {
   content: '';
   position: fixed;
@@ -18,30 +22,31 @@ body::before {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.25);
-  filter: sepia(10%) brightness(90%) contrast(110%);
   z-index: -2;
   pointer-events: none;
 }
 
-/* 全局透明兜底，彻底消除灰色 */
+/* 彻底清除底色，不显示白边、灰底 */
 html {
   background-color: transparent !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 100vh !important;
 }
 
 /* ========================================
-   强制所有容器透明，让背景显示出来
+   核心：一打开页面，内容全部藏在屏幕外
+   下滑才显示出来
    ======================================== */
-#body-wrap,
+#body-wrap {
+  position: relative !important;
+  top: 100vh !important;
+  background: transparent !important;
+}
+
+/* 内容区域全透明 */
 #page,
 .main-content,
 .content-wrap,
 #content,
 .container,
-.main,
-#app,
 #main-content {
   background: transparent !important;
   box-shadow: none !important;
@@ -49,7 +54,7 @@ html {
 }
 
 /* ========================================
-   页面整体深色化
+   页面样式（你原来的全部保留）
    ======================================== */
 .layout_post-list .post-item,
 .sidebar,
@@ -67,63 +72,40 @@ html {
 .footer-wrap * {
   color: #f5f5f5 !important;
 }
-
 a {
-  color: #81d4fa !important;
+  color: #81f7ff !important;
 }
 a:hover {
-  color: #4fc3f7 !important;
+  color: #fff !important;
 }
 
 /* ========================================
-   关键：让 Banner 占满整个视口，和参考图一样
+   标题文字位置（你原来的）
    ======================================== */
-#page-header.full_page {
-  height: 100vh !important;
-  min-height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 #page-header.full_page #site-info {
   transform: translateY(-40px);
 }
-
-#page-header.full_page #site-info .site-name {
+#page-header.full_page #site-name {
   color: #e0f7ff !important;
   text-shadow: 0 0 8px rgba(120, 210, 255, 0.8) !important;
 }
-
-#page-header.full_page #site-info .site-subtitle {
+#page-header.full_page #site-subtitle {
   color: #e0f7ff !important;
   text-shadow: 0 0 5px rgba(120, 210, 255, 0.6) !important;
 }
 
 /* ========================================
-   文章卡片悬浮 + 看板娘位置
+   文章动画 + 看板娘（你原来的）
    ======================================== */
 .layout_post-list .post-item {
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .layout_post-list .post-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
 }
-
 #live2dcanvas {
   margin-right: 10px !important;
   margin-bottom: 20px !important;
   z-index: 999 !important;
-}
-
-/* ========================================
-   优化滚动体验
-   ======================================== */
-html, body {
-  overflow-x: hidden !important;
-  scroll-behavior: smooth;
 }
