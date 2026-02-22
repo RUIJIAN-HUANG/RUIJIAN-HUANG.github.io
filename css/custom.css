@@ -108,3 +108,46 @@ a:hover {
   margin-bottom: 20px !important;
   z-index: 999 !important;
 }
+
+
+
+/* ========================================
+   实现全屏 Banner，内容默认在视口之外
+   ======================================== */
+
+/* 1. 让首页 Banner 占满整个视口 */
+#page-header.full_page {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
+/* 2. 让页面主体内容默认在视口下方，需要滚动才可见 */
+#body-wrap {
+  position: relative !important;
+  top: 100vh !important; /* 主体内容从视口底部开始 */
+  background: transparent !important;
+}
+
+/* 3. 修复滚动条和布局 */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* 4. 让向下滚动的箭头更明显 */
+#page-header.full_page .scroll-down {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 10 !important;
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
