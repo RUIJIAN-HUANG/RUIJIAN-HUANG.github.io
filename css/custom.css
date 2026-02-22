@@ -76,8 +76,19 @@ a:hover {
 }
 
 /* ========================================
-   解决文字遮脸：上移 Banner 文字
+   关键：让 Banner 占满整个视口，和参考图一样
    ======================================== */
+#page-header.full_page {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 #page-header.full_page #site-info {
   transform: translateY(-40px);
 }
@@ -110,14 +121,8 @@ a:hover {
 }
 
 /* ========================================
-   关键：实现“先看壁纸，滚动后显示内容”
+   优化滚动体验
    ======================================== */
-/* 让整个页面内容从视口下方开始，初始不可见 */
-#body-wrap {
-  margin-top: 100vh !important;
-}
-
-/* 优化滚动体验 */
 html, body {
   overflow-x: hidden !important;
   scroll-behavior: smooth;
