@@ -110,9 +110,8 @@ a:hover {
 }
 
 
-
 /* ========================================
-   实现全屏 Banner，内容默认在视口之外
+   首屏全屏 Banner，滚动后显示内容
    ======================================== */
 
 /* 1. 让首页 Banner 占满整个视口 */
@@ -120,18 +119,24 @@ a:hover {
   height: 100vh !important;
   min-height: 100vh !important;
   position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* 2. 让页面主体内容默认在视口下方，需要滚动才可见 */
-#body-wrap {
-  position: relative !important;
-  top: 100vh !important; /* 主体内容从视口底部开始 */
-  background: transparent !important;
+/* 2. 让页面主体内容从视口底部开始，初始不可见 */
+.main-content,
+.content-wrap {
+  margin-top: 100vh !important;
 }
 
-/* 3. 修复滚动条和布局 */
+/* 3. 优化滚动体验，防止横向滚动条 */
 html, body {
   overflow-x: hidden !important;
+  scroll-behavior: smooth; /* 可选：让滚动更平滑 */
 }
 
 /* 4. 让向下滚动的箭头更明显 */
