@@ -109,50 +109,24 @@ a:hover {
   z-index: 999 !important;
 }
 
-
 /* ========================================
-   首屏全屏 Banner，滚动后显示内容
+   实现“先看背景，滚动后才看到内容”的效果
    ======================================== */
 
-/* 1. 让首页 Banner 占满整个视口 */
-#page-header.full_page {
-  height: 100vh !important;
-  min-height: 100vh !important;
-  position: relative !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 2. 让页面主体内容从视口底部开始，初始不可见 */
-.main-content,
-.content-wrap {
+/* 1. 让页面内容整体从视口下方开始 */
+#body-wrap {
   margin-top: 100vh !important;
+  position: relative !important;
 }
 
-/* 3. 优化滚动体验，防止横向滚动条 */
+/* 2. 让 Banner 区域正常显示，不再强制占满视口 */
+#page-header.full_page {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* 3. 优化滚动体验 */
 html, body {
   overflow-x: hidden !important;
-  scroll-behavior: smooth; /* 可选：让滚动更平滑 */
-}
-
-/* 4. 让向下滚动的箭头更明显 */
-#page-header.full_page .scroll-down {
-  position: absolute !important;
-  bottom: 20px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 10 !important;
-  color: #fff !important;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-  40% { transform: translateX(-50%) translateY(-10px); }
-  60% { transform: translateX(-50%) translateY(-5px); }
+  scroll-behavior: smooth;
 }
