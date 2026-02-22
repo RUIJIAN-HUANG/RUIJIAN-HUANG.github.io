@@ -5,6 +5,9 @@ body {
   background: url(/img/xuenai.jpg) no-repeat fixed center center !important;
   background-size: cover !important;
   position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
 }
 
 body::before {
@@ -20,9 +23,29 @@ body::before {
   pointer-events: none;
 }
 
-/* 全局深色兜底 */
+/* 全局透明兜底，彻底消除灰色 */
 html {
-  background-color: #121212 !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+}
+
+/* ========================================
+   强制所有容器透明，让背景显示出来
+   ======================================== */
+#body-wrap,
+#page,
+.main-content,
+.content-wrap,
+#content,
+.container,
+.main,
+#app,
+#main-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* ========================================
