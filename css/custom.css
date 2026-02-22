@@ -1,0 +1,87 @@
+/* ========================================
+   1. 全局背景：xuenai.jpg 铺满 + 透明滤镜
+   ======================================== */
+body {
+  background: url(/img/xuenai.jpg) no-repeat fixed center center !important;
+  background-size: cover !important;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  filter: sepia(10%) brightness(90%) contrast(110%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* 全局深色兜底 */
+html {
+  background-color: #121212 !important;
+}
+
+/* ========================================
+   2. 页面整体深色化（不变）
+   ======================================== */
+.layout_post-list .post-item,
+.sidebar,
+#header,
+.footer-wrap,
+.comment-wrap {
+  background: rgba(18, 18, 18, 0.85) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.post-content,
+.sidebar *,
+#header *,
+.footer-wrap * {
+  color: #f5f5f5 !important;
+}
+
+a {
+  color: #81d4fa !important;
+}
+a:hover {
+  color: #4fc3f7 !important;
+}
+
+/* ========================================
+   3. 解决文字遮脸：上移 Banner 文字（可微调）
+   ======================================== */
+#page-header.full_page #site-info {
+  transform: translateY(-40px); /* 遮脸则调大，如 -50px/-60px */
+}
+
+#page-header.full_page #site-info .site-name {
+  color: #e0f7ff !important;
+  text-shadow: 0 0 8px rgba(120, 210, 255, 0.8) !important;
+}
+
+#page-header.full_page #site-info .site-subtitle {
+  color: #e0f7ff !important;
+  text-shadow: 0 0 5px rgba(120, 210, 255, 0.6) !important;
+}
+
+/* ========================================
+   4. 文章卡片悬浮 + 看板娘位置（不变）
+   ======================================== */
+.layout_post-list .post-item {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.layout_post-list .post-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+#live2dcanvas {
+  margin-right: 10px !important;
+  margin-bottom: 20px !important;
+  z-index: 999 !important;
+}
